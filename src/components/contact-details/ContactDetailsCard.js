@@ -1,10 +1,8 @@
 const  ContactDetailsCard = ({ contact }) => {
     return (
-        <div>
-            <div>
-                <img src={contact?.profilePic} alt={`Profile of ${contact?.firstName}${contact?.lastName}.`}/>
-            </div>
-            <div>
+        <div className="card" style={{ width: "24rem", margin: "2rem" }}>
+            <img src={contact?.profilePic} alt={`Profile of ${contact?.firstName}${contact?.lastName}.`} className="card-img-top" />
+            <div className="card-body">
                 <p>{contact?.firstName} {contact?.lastName}</p>
                 <dl>
                     <dt>Phone Number</dt>

@@ -5,6 +5,7 @@ import ContactsPage from "./contacts";
 import ContactDetailsPage from "./contact-details";
 import ContactCreatePage from "./contact-create";
 import { getContacts } from "../utils/contacts";
+import { ContactsProvider } from "../providers/ContactsProvider";
 
 const mockContacts = [
   {
@@ -66,13 +67,13 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <ContactsProvider>
         <LoginPage />
         <RegisterPage />
         <ContactsPage contacts={this.state.contacts} />
         <ContactDetailsPage contact={this.state.contacts[0]} />
         <ContactCreatePage />
-      </div>
+      </ContactsProvider>
     );
   }
 }
